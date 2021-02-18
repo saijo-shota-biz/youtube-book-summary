@@ -27,33 +27,41 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-da74ac16ebdd41803593.js"
+    "url": "webpack-runtime-bc63ddce65aa42b5302c.js"
   },
   {
     "url": "framework-d585a04b7d285a7760d6.js"
   },
   {
-    "url": "styles.21e08ce518102c7ebbf8.css"
+    "url": "styles.8ea5511f7a9da3001118.css"
   },
   {
     "url": "styles-8fab2804fb6f85b824b6.js"
   },
   {
-    "url": "app-281aa6931d6e00c168cb.js"
+    "url": "app-9edad1feb1213986f9aa.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "eaff83d6e5bf25b9701ef55d1efa239a"
+    "revision": "1094b41bd96b8bf90f2a2321ee1fbd01"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-19245c8506e49b502b12.js"
+  },
+  {
+    "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
+    "revision": "f6081b83111aea4128c98944b7fafccc"
+  },
+  {
+    "url": "page-data/app-data.json",
+    "revision": "70c80bc96f34ca2f5c2f6a6d02747cfe"
   },
   {
     "url": "polyfill-d2a12da121185e869b24.js"
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "50e062ffcf089d26cb03842f1e2a4e04"
+    "revision": "bbef92e03ab4443ce4ebaf69e9f5e985"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
@@ -140,12 +148,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^`), ``)
+  pathname = pathname.replace(new RegExp(`^/youtube-book-summary`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-281aa6931d6e00c168cb.js`))) {
+  if (!resources || !(await caches.match(`/youtube-book-summary/app-9edad1feb1213986f9aa.js`))) {
     return await fetch(event.request)
   }
 
@@ -158,7 +166,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/youtube-book-summary/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })
