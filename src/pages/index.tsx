@@ -17,10 +17,13 @@ const IndexPage = () => {
   return (
     <>
       <div>Home</div>
+
       {channels.map((channel, i) => (
-        <Link key={i} to={`/channel/${channel.channelId}`}>
-          {channel.channelTitle}
-        </Link>
+        <div>
+          <Link key={i} to={`./channel/${channel.channelId}`}>
+            {channel.channelTitle}
+          </Link>
+        </div>
       ))}
     </>
   );
