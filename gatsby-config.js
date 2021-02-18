@@ -5,6 +5,7 @@ module.exports = {
     title: "youtube-book-summary",
     siteUrl: "https://saijo-shota-biz.github.io/youtube-book-summary/",
   },
+  pathPrefix: `/youtube-book-summary`,
   plugins: [
     "gatsby-plugin-styled-components",
     // {
