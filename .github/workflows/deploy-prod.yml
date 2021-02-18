@@ -1,0 +1,28 @@
+on:
+  push:
+    branches:
+      - master
+name: Build and Deploy
+jobs:
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Use Node.js 12.13
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.16"
+
+      - name: Build Project
+        run: |
+          npm install -g gatsby-cli
+          npm install
+          npm run build
+
+      - name: Deploy Prod
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public

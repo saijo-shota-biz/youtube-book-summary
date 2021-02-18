@@ -1,0 +1,9 @@
+{
+  "editor.tabSize": 2,
+  "html.format.endWithNewline": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.configPath": ".prettierrc",
+  "prettier.printWidth": 120,
+}
