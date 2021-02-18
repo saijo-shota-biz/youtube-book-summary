@@ -20,7 +20,7 @@ const IndexPage = () => {
 
       {channels.map((channel, i) => (
         <div>
-          <Link key={i} to={`./channel/${channel.channelId}`}>
+          <Link key={i} to={`channel/${channel.channelId}`}>
             {channel.channelTitle}
           </Link>
         </div>

@@ -30,7 +30,7 @@ const TestPage = ({ pageContext }) => {
       {videoList.map((video, i) => (
         <GridItem key={i}>
           <Video
-            src={`https://www.youtube.com/embed/${video.videoId}`}
+            src={`https://www.youtube-nocookie.com/embed/${video.videoId}`}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
