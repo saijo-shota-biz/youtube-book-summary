@@ -29,7 +29,7 @@ exports.createPages = async ({ actions, graphql }) => {
   [...new Set(videos.map(({ node }) => node.channelId))]
     .map(channelId => ({
       channelId,
-      videos: videos.filter(({ node }) => node.channelId === channelId),
+      videos: videos.filter(({ node }) => node.channelId === channelId).map(({ node }) => node),
     }))
     .forEach(channel => {
       createPage({

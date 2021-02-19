@@ -32,7 +32,7 @@ const TestPage = ({ pageContext }) => {
           <Video
             src={`https://www.youtube-nocookie.com/embed/${video.videoId}`}
             frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></Video>
         </GridItem>
